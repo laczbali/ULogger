@@ -5,7 +5,7 @@ General purpose, general usage logger library
 **Python version**
 - `setuptools` & `wheel` PIP packages
 - Prerelease version of `pythonnet` ( `pip install --pre pythonnet` )
-- (Linux) May need to install mono `sudo apt-get install mono-complete`
+- (Linux) May need to install mono ( `sudo apt-get install mono-complete` )
 
 # Feature goals
 - Two versions (at least)
