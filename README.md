@@ -4,7 +4,7 @@ General purpose, general usage logger library
 # Requirements
 **Python version**
 - PIP packages from `requirements.txt`
-- (Linux) May need to install mono ( `sudo apt-get install mono-complete` )
+- (Linux) You need mono ( `sudo apt-get install mono-complete` )
 
 # Feature goals
 - Two versions (at least)
