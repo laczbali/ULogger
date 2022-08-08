@@ -1,0 +1,10 @@
+# Visual Studio settings
+.vscode
+.vs
+
+# Private files
+.env
+
+# .NET build outputs
+bin
+obj
