@@ -3,8 +3,7 @@ General purpose, general usage logger library
 
 # Requirements
 **Python version**
-- `setuptools` & `wheel` PIP packages
-- Prerelease version of `pythonnet` ( `pip install --pre pythonnet` )
+- PIP packages from `requirements.txt`
 - (Linux) May need to install mono ( `sudo apt-get install mono-complete` )
 
 # Feature goals
