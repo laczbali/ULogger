@@ -8,3 +8,7 @@
 # .NET build outputs
 bin
 obj
+
+# Python non-tracked files
+.venv
+__pycache__

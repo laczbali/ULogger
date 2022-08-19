@@ -1,11 +1,7 @@
-import os
-import sys
-import clr
+from ULoggerNET import ULog, TextLogger
 
-sys.path.append(os.getcwd())
-clr.AddReference("ULogger")
+logger = ULog()
+logger.AddLogger(TextLogger(["c:\\temp\\out.txt", "c:\\temp\\outj.json"]))
+logger.Log("is this working?")
 
-from ULogger import ULog # type: ignore
-
-x = ULog.SumNums(1,2)
-print(x)
+# use https://github.com/dotnet/ILMerge ?
