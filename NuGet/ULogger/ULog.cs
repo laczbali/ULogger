@@ -59,5 +59,15 @@ namespace ULogger
                 logger.Log(message, level);
             }
         }
+
+        /// <summary>
+        /// Creates a log with each added logger
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="level"></param>
+        public void Log(string message, int level = 0)
+        {
+            Log(message, (LogLevel)level);
+        }
     }
 }

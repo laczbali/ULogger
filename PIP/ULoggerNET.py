@@ -1,17 +1,21 @@
-from enum import Enum
+from enum import IntEnum
 import os
 import sys
 import clr
 
-sys.path.append(os.getcwd())
-clr.AddReference("ULogger")
+# no need to import this, easier to just define here
+class LogLevel(IntEnum):
+    # it will actually use the 'int' version of the Log() method
+    # as PythonNET can't deal with proper enums
+    Info = 0,
+    Warn = 1,
+    Error = 2,
 
 # below is the definition for the ULogger classes
-# they will get loaded at the bottom with the import
-
+# they will get loaded at the bottom with the 
+# but defining them here provides hints for the classes
 class TextLogger:
     """
-    Set up a new TextLogger
      
     Select where should it create a log.
     It can be an existing or a new file.
@@ -22,17 +26,12 @@ class TextLogger:
         pass
     pass
 
-class LogLevel(Enum):
-    Info = 0,
-    Warn = 1,
-    Error = 2,
-
 class ULog:
     """
     Create and use loggers
     """
 
-    def AddLogger(newLoggers : TextLogger):
+    def AddLogger(self, newLoggers : TextLogger):
         """
         Define a new Logger to be used when Log is called
 
@@ -42,14 +41,15 @@ class ULog:
         """
         pass
 
-    def Log(msg : str, level : LogLevel):
+    def Log(self, msg : str, level : LogLevel):
         """
         Creates a log with each added logger
         """
         pass
 
-
-
-
+# add DLL
+sys.path.append(os.getcwd())
+clr.AddReference("ULogger")
+# import from DLL (need to disable errors, as the hinter has no idea about the DLL)
 from ULogger import ULog # type: ignore
 from ULogger.Loggers import TextLogger  # type: ignore
