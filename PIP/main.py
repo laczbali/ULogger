@@ -1,4 +1,3 @@
-from enum import Enum
 from ULoggerNET import ULog, TextLogger, LogLevel
 
 logger = ULog()
