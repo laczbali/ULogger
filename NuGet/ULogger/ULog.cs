@@ -5,10 +5,16 @@ using ULogger.Types;
 
 namespace ULogger
 {
+    /// <summary>
+    /// Create and use loggers
+    /// </summary>
     public class ULog
     {
         private List<ILogger> _loggers = new List<ILogger>();
 
+        /// <summary>
+        /// 
+        /// </summary>
         public ULog() { }
 
         /// <summary>
