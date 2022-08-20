@@ -16,7 +16,6 @@ class LogLevel(IntEnum):
 # but defining them here provides hints for the classes
 class TextLogger:
     """
-     
     Select where should it create a log.
     It can be an existing or a new file.
     The format can be .txt or .json.
