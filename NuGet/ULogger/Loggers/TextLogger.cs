@@ -2,20 +2,16 @@
 using System.Collections.Generic;
 using ULogger.Types;
 using System.IO;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace ULogger.Loggers
 {
+    /// <summary>
+    /// Log to TXT or JSON
+    /// </summary>
     public class TextLogger : ILogger
     {
         private readonly List<string> _outputFiles = new List<string>();
-
-        private readonly JsonSerializerOptions jsonOptions = new JsonSerializerOptions
-        {
-            Converters = { new JsonStringEnumConverter() },
-            IncludeFields = true
-        };
 
         /// <summary>
         /// Set up a new TextLogger
@@ -129,10 +125,10 @@ namespace ULogger.Loggers
         {
             var rawFileData = File.ReadAllText(filePath);
             if (rawFileData == "") { rawFileData = "[]"; }
-            var fileData = JsonSerializer.Deserialize<List<LogObject>>(rawFileData, jsonOptions);
+            var fileData = JsonConvert.DeserializeObject<List<LogObject>>(rawFileData);
 
             fileData.Add(logObject);
-            var outText = JsonSerializer.Serialize(fileData, jsonOptions);
+            var outText = JsonConvert.SerializeObject(fileData);
 
             using (StreamWriter writer = new StreamWriter(filePath))
             {
