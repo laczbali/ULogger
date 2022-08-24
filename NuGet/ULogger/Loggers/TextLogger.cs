@@ -11,7 +11,7 @@ namespace ULogger.Loggers
     /// </summary>
     public class TextLogger : ILogger
     {
-        private readonly List<string> _outputFiles = new List<string>();
+        private List<string> _outputFiles = new List<string>();
 
         /// <summary>
         /// Set up a new TextLogger
@@ -123,6 +123,8 @@ namespace ULogger.Loggers
         /// <param name="logObject"></param>
         private void LogToJson(string filePath, LogObject logObject)
         {
+            // TODO: add error handling
+
             var rawFileData = File.ReadAllText(filePath);
             if (rawFileData == "") { rawFileData = "[]"; }
             var fileData = JsonConvert.DeserializeObject<List<LogObject>>(rawFileData);
@@ -143,6 +145,8 @@ namespace ULogger.Loggers
         /// <param name="logObject"></param>
         private void LogToText(string filePath, LogObject logObject)
         {
+            // TODO: add error handling
+
             var outtext = "----------------------------------";
             outtext += $"\nCreated at: {logObject.creationDate.ToString()}";
             outtext += $"\nLevel:      {logObject.level.ToString()}";
