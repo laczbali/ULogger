@@ -11,14 +11,6 @@ class LogLevel(IntEnum):
     Warn = 1,
     Error = 2,
 
-class SmtpConfig:
-    def __init__(self, host, port, username, password) -> None:
-        self.host = host
-        self.port = port
-        self.username = username
-        self.password = password
-        pass
-
 # below is the definition for the ULogger classes
 # they will get loaded at the bottom with the 
 # but defining them here provides hints for the classes
@@ -32,6 +24,14 @@ class TextLogger:
     def __init__(self, filepaths) -> None:
         pass
     pass
+
+class SmtpConfig:
+    def __init__(self, host, port, username, password) -> None:
+        self.host = host
+        self.port = port
+        self.username = username
+        self.password = password
+        pass
 
 class EmailLogger:
     """
