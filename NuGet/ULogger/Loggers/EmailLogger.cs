@@ -77,6 +77,7 @@ namespace ULogger.Loggers
             }
             catch(Exception e)
             {
+                // TODO: when called from python we get in here (Object reference not set to an instance of an object)
                 var exceptionMessage = e.InnerException == null ? e.Message : e.InnerException.Message;
                 Console.WriteLine("[ULOG] Failed to get entry assembly name, defaulting to 'Ulog'. Details: " + exceptionMessage);
             }
