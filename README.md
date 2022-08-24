@@ -16,7 +16,6 @@ logger.Log("Hello there", LogLevel.Warn)
 ```
 
 **.NET**
-- Setup
 - Usage
 ```csharp
 using ULogger;
@@ -28,8 +27,8 @@ logger.Log("ipsum", ULogger.Types.LogLevel.Info);
 ```
 
 <!-- TOOD: dependency injection usage -->
-
-# Setting up GMail for EmailLogger
+# Notes
+## Setting up Gmail for EmailLogger
 1. Go to My Account in Gmail and click on Security
 2. Scroll down to choose the Signing into Google option
 3. Click on App Password. (Note: You can see this option when two-step authentication is enabled)
