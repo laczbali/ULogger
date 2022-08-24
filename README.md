@@ -29,6 +29,17 @@ logger.Log("ipsum", ULogger.Types.LogLevel.Info);
 
 <!-- TOOD: dependency injection usage -->
 
+# Setting up GMail for EmailLogger
+1. Go to My Account in Gmail and click on Security
+2. Scroll down to choose the Signing into Google option
+3. Click on App Password. (Note: You can see this option when two-step authentication is enabled)
+4. Here, you can see a list of applications, choose the required one
+5. Next, pick the Select Device option and click on the device which is being used to operate Gmail
+6. Now, click on Generate
+7. After that, enter the Password shown in the Yellow bar
+8. Lastly, click on Done
+( [thanks](https://stackoverflow.com/a/73214197) )
+
 # Feature goals
 - Two versions (at least)
   - .NET NuGet package

@@ -4,6 +4,7 @@
 
 # Private files
 .env
+appsettings.json
 
 # .NET build outputs
 bin
