@@ -1,5 +1,6 @@
 ﻿using ULogger;
 using ULogger.Loggers;
+using ULogger.Types;
 using Microsoft.Extensions.Configuration;
 
 var config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
@@ -18,7 +19,7 @@ var fromaddress = emailSettings["fromaddress"];
 var toaddress = emailSettings["toaddress"];
 logger.AddLogger(
     new EmailLogger(
-        new EmailLogger.SmtpConfig("smtp.gmail.com", 587, username, password),
+        new SmtpConfig("smtp.gmail.com", 587, username, password),
         fromaddress,
         toaddress
     )
